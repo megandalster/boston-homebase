@@ -26,31 +26,25 @@
 			<?PHP include('header.php');?>
 			<div id="content">
 				<p><strong>Background</strong><br /><br />
-				<i>Homebase</i> is a web-based volunteer management and scheduling system  developed by Whitman College students and an instructor 
-	      		in collaboration with staf members at the <a href="http://rmhprovidence.org" target="_blank">Ronald McDonald House in Providence, RI</a>. 
+				<i>Homebase</i> is a web-based volunteer management and scheduling system originally developed in 2008 at Bowdoin College for
+	      		the <a href="http://rmhcme.org" target="_blank">Ronald McDonald House in Portland, ME</a>. 
 				
-				<p>The original version of <i>Homebase</i></a> was developed in 2008 <a href="http://www.bowdoin.edu/computer-science" target="_blank">
-	            Bowdoin College</a> students and an instructor for the <a href="http://www.rmhportland.org/" target="_blank">Ronald McDonald House in Portland, Maine</a>. and has been
-	            supported and later enhanced by other Bowdoin students, RMH staff, and a local software developer.  More information about the original <i>Homebase</i> projects can be found 
-	            in <a href="http://www.bowdoin.edu/news/archives/1bowdoincampus/005118.shtml" target="_BLANK"> this article</a>.      
- 
-				<p>This project is supported by <a href="http://npfi.org" target="_blank">
+				<p>Later versions of <i>Homebase</i></a> were customized for the Ronald McDonald Houses in Providence, RI, Bangor, ME, and Boston, MA. Each of these
+				versions was developed by a different student team, local RMH staff, and an instructor.
+				
+				<p>All versions of <i>Homebase</i> are freely supported by <a href="http://npfi.org" target="_blank">
 				The Non-Profit FOSS Institute (NPFI)</a>, which "aims to build communities that develop and support customized 
 				free and open source software (FOSS) applications that directly benefit the missions of humanitarian 
-				non-profit organizations."  NPFI is inspired by the <a href="http://www.hfoss.org" target="_blank">Humanitarian 
-				Free and Open Source (HFOSS) Project</a>, which has more global humanitarian goals.
-				<p>
+				non-profit organizations."
 				
  				<p><b>System Access and Reuse</b><br /><br />
 				Because <i>Homebase</i> must protect the privacy of individual RMH volunteers and staff, outside access to the system is
-				restricted.  If you are an RMH staff member or volunteer and have forgotten your Username or Password, please contact the <a href="mailto:jpowers@rmhprovidence.org">Volunteer Coordinator</a>.
+				restricted.  If you are an RMH staff member or volunteer and have forgotten your Username or Password, please contact the <a href="mailto:randerson@rmhcne.org">Volunteer Coordinator</a>.
                 </p>
-				<p> <i>Homebase</i> is free and open source software (see <a href="http://code.google.com/p/rmhp-homebase/" target="_blank">http://code.google.com/p/rmhp-homebase/</a>).  
+				<p> <i>Homebase</i> is free and open source software (see <a href="https://github.com/megandalster/homebasedemo2017" target="_blank">https://github.com/megandalster/homebasedemo2017</a>).  
 				From this site, its source code can be freely downloaded and adapted
-				 to fit the volunteer scheduling needs of other non-profits.  
-				 For more information about the capabilities or adaptability of <i>Homebase</i></i> to other settings, please 
-				 contact either <a href="mailto:allen@bowdoin.edu">Allen Tucker</a> or visit the website 
-				 <a href="http://npfi.org" target="_blank">http://npfi.org</a>.
+				 to fit the volunteer scheduling needs of other non-profits.  For more information about the capabilities or adaptability of <i>Homebase</i></i> to other settings, please 
+				 contact either <a href="mailto:allen@npfi.org">Allen Tucker</a> or visit the website <a href="https://npfi.org" target="_blank">https://npfi.org</a>.
 				</p> 
 				
 			</div>
