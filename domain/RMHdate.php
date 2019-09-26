@@ -148,7 +148,7 @@ class RMHdate {
      * Otherwise, return false
      */
     function get_shift_id($shift_start) {
-    	if ($shift_start==21) {
+    	if ($shift_start==20) {
         	foreach ($this->shifts as $shift) 
                 if ($shift->get_hours() == "night")
                     return $shift->get_id();

@@ -343,7 +343,8 @@ function get_person_ids($venue, $week_no, $day, $time) {
         die("get_person_ids could not query the database");
     if (mysqli_num_rows($result) !== 1) {
         mysqli_close($con);
-        die("Error: week-day-time-venue not valid:see get_person_ids");
+        return array();
+        //die("Error: week-day-time-venue not valid: see get_person_ids");
     }
     $result_row = mysqli_fetch_assoc($result);
     $person_ids = explode(',', $result_row['persons']);

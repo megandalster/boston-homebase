@@ -19,7 +19,7 @@ include_once(dirname(__FILE__).'/../database/dbPersons.php');
 class Shift {
 
     private $mm_dd_yy;      // String: "mm-dd-yy".
-    private $hours;          // String: '9-1', '1-5', '5-9' or 'night'
+    private $hours;          // String: '8-12', '12-4', '4-8'
     private $start_time;    // Integer: e.g. 10 (meaning 10:00am)     
     private $end_time;      // Integer: e.g. 13 (meaning 1:00pm)	  
     private $venue;         // "house", "fam", or "mealprep"
@@ -40,10 +40,13 @@ class Shift {
         $this->hours = substr($mm_dd_yyhours, 9);
         $i = strpos($this->hours, "-");
         if ($i>0) {
-        	$this->start_time = substr($this->hours, 0, $i);   
-        	$this->end_time = substr($this->hours, $i + 1) + 12;
-        	if ($this->start_time != "9") {
+        	$this->start_time = substr($this->hours, 0, $i);  
+        	if ($this->start_time == '4') {
         		$this->start_time += 12;
+        	};
+        	$this->end_time = substr($this->hours, $i + 1);
+            if ($this->end_time <'12') {
+        		$this->end_time += 12;
         	}
         }
         else {  // assuming an overnight shift
@@ -224,10 +227,6 @@ function report_shifts_staffed_vacant($from, $to) {
 		'earlypm' => array('Mon' => array(0, 0), 'Tue' => array(0, 0), 'Wed' => array(0, 0), 'Thu' => array(0, 0),
     				'Fri' => array(0, 0), 'Sat' => array(0, 0), 'Sun' => array(0, 0)),
 		'latepm' => array('Mon' => array(0, 0), 'Tue' => array(0, 0), 'Wed' => array(0, 0), 'Thu' => array(0, 0),
-    				'Fri' => array(0, 0), 'Sat' => array(0, 0), 'Sun' => array(0, 0)),
-		'evening' => array('Mon' => array(0, 0), 'Tue' => array(0, 0), 'Wed' => array(0, 0), 'Thu' => array(0, 0),
-    				'Fri' => array(0, 0), 'Sat' => array(0, 0), 'Sun' => array(0, 0)),
-		'overnight' => array('Mon' => array(0, 0), 'Tue' => array(0, 0), 'Wed' => array(0, 0), 'Thu' => array(0, 0),
     				'Fri' => array(0, 0), 'Sat' => array(0, 0), 'Sun' => array(0, 0)),
 		'total' => array('Mon' => array(0, 0), 'Tue' => array(0, 0), 'Wed' => array(0, 0), 'Thu' => array(0, 0),
     				'Fri' => array(0, 0), 'Sat' => array(0, 0), 'Sun' => array(0, 0)),

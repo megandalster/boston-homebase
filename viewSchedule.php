@@ -59,7 +59,7 @@ include_once("domain/MasterScheduleEntry.php");
 function show_master_schedule($venue) {
 	$groups = array("1st", "2nd", "3rd", "4th", "5th");
 	$altgroups = array("odd", "even");
-    $shifts = array("9-1","1-5","5-9","night");
+    $shifts = array("8-12","12-4","4-8");
 	$venues = array("house"=>"House","fam"=>"Family Room");
     $days = array("Mon" => "Monday", "Tue" => "Tuesday", "Wed" => "Wednesday",
                     "Thu" => "Thursday", "Fri" => "Friday", "Sat" => "Saturday", "Sun" => "Sunday");

@@ -188,8 +188,8 @@ function get_shift_start($id) {
 		return 0;
 	else {
 		$st = substr($id, 9, 1);
-	    if ($st!=9)
-	    	$st = $st+12;
+	    if ($st==1)
+	    	$st = 12;
 	    return $st;
 	}
 }
@@ -197,8 +197,14 @@ function get_shift_start($id) {
 function get_shift_end($id) {
 	if (substr($id,9,5)=="night")
 		return 1;
-    else 
-        return substr($id, 11, 1)+12;
+		else {
+		    $st = substr($id, 11, 1);
+		    if ($st==1)
+		        $st = 12;
+		    else if ($st=="-")
+		        $st = 4;
+		    return $st;
+		}
 }
 
 //Add class get_shift_venue, using the "strrchr" function to return the part after the last ":"

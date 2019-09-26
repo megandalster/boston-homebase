@@ -175,32 +175,34 @@ foreach ($types as $key => $value) {
 }
 ?>
     <fieldset id='availability'>
-        <legend><b>Availability</b>:<span style="font-size:x-small;color:FF0000">*</span> (Check at least one Venue and at least one Shift) </legend>
+        <legend><b>Availability</b>:<span style="font-size:x-small;color:FF0000">*</span> 
+        (CMD-click to select multiple shifts.) </legend>
         <span class="bigTable">
             <table>
                 <?PHP
                 $shifts = array('9-1' => 'Morning (9-1)', '1-5' => 'Afternoon (1-5)', '5-9' => 'Evening (5-9)',
                     'night' => "Overnight");
-                $venues = array('house'=>"House", 'fam'=>"Family Room",""=>"");
+                $venues = array('house'=>"House",""=>"");
                 $days = array('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun');
-                $shifts = array('9-1','1-5','5-9','night');
+                $shifts = array('8-12','12-4','4-8');
                 $weeks = array('Week of Year', 'odd', 'even', 'Week of Month', '1st', '2nd', '3rd', '4th', '5th');
                 $person_availability = implode(',', $person->get_availability());
     		
    		 		echo "<table><tr><td valign='top'>";
-   		 		  echo "<table><tr><td colspan='2'><b>Venue</b></td></tr>";	
+   		 	      echo "<table>";
+   		 		  echo "<tr><td colspan='2'><b>Venue</b></td></tr>";	
    		 		    foreach ($venues as $venue=>$venuename) {
    		 		    	echo "<tr>";
    		 		    	if ($venuename!="") {
    		 		    	    echo ('<td align="right"><input type="checkbox" name="availvenues[]" value=' . $venue);
-    	  				    if (in_array($venue, $person->get_availvenues())) echo(' CHECKED');
+    	  				    /* if (in_array($venue, $person->get_availvenues())) */ echo(' CHECKED');
     	  				    echo ('></td>');
    		 		    	}
    		 		    	else echo "<td>&nbsp;</td>";
    		 		    	echo "<td>".$venuename."</td>";
    		 		    	echo "</tr>";
    		 		    }
-   		 		  echo "</tr></table></td>";  
+   		 		  echo "</tr></table></td>"; 
    		 	      
    		 		  echo "<td valign='top'><table><tr><td>&nbsp;&nbsp;<b>Shifts</b></td>";
    		 			foreach ($days as $day)
@@ -209,9 +211,9 @@ foreach ($types as $key => $value) {
    		 		    foreach ($weeks as $week_no) {
    		 		    	echo "<tr><td align='center'><b>".$week_no."</b></td>";
    		 		    	if ($week_no == "Week of Year") 
-   		 		    		echo "<td colspan='7'>(check both 'odd' and 'even' for every-week availability)";
+   		 		    		echo "<td colspan='7'>(Select both 'odd' and 'even' to show every-week availability)";
    		 		    	else if ($week_no == "Week of Month")
-   		 		    	    echo "<td colspan='7'>(use only for alternating weeks of the month)";
+   		 		    	    echo "<td colspan='7'>(Use only for selecting particular weeks of the month)";
    		 		    	else foreach ($days as $day) {
    		 		    	  	echo "<td><select multiple name='availdays[]'>";
    		 		    	  	foreach ($shifts as $shift) {

@@ -188,7 +188,7 @@ session_cache_expire(30);
 		<tr><td><form method=\"POST\" style=\"margin-bottom:0;\">
 			<select name=\"scheduled_vol\">
 			<option value=\"0\" style=\"width: 371px;\">Select a volunteer with this availability</option>"
-                    . get_available_volunteer_options($msentry, get_persons($msentry->get_id())) .
+                            . get_available_volunteer_options($msentry, get_persons($msentry->get_id())) .
                     "</select><br><br>
 			<select name=\"all_vol\">
 			<option value=\"0\" style=\"width: 371px;\">Select from all volunteers</option>"
@@ -245,12 +245,11 @@ session_cache_expire(30);
                 function get_available_volunteer_options($msentry, $persons) {
                     if (!$persons[0])
                         array_shift($persons);
+                    $chrtime =  $msentry->get_week_no().":" . $msentry->get_day() . ":" . $msentry->get_hours().":".$msentry->get_venue();
                     $con=connect();
-                    $chrtime =  $msentry->get_week_no().":" . $msentry ->get_day() . ":" . $msentry->get_hours().":".$msentry->get_venue();
-
                     $query = "SELECT * FROM dbPersons WHERE status = 'active' " .
                             "AND availability LIKE '%" . $chrtime . "%' ORDER BY last_name,first_name";
-                    $result = mysqli_query($query);
+                    $result = mysqli_query($con,$query);
                     mysqli_close($con);
                     $s = "";
                     for ($i = 0; $i < mysqli_num_rows($result); ++$i) {

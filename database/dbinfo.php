@@ -1,11 +1,9 @@
 <?php
 /*
- * Copyright 2015 by student1, student2, student3, student4, and Allen Tucker. 
- * This program is part of RMHP-Homebase, which is free software.  It comes with 
- * absolutely no warranty. You can redistribute and/or modify it under the terms 
- * of the GNU General Public License as published by the Free Software Foundation
- * (see <http://www.gnu.org/licenses/ for more information).
- * 
+ * Copyright 2015 by NPFI. This program is part of Homebase, which is free software.  
+ * It comes with absolutely no warranty. You can redistribute and/or modify it under 
+ * the terms of the GNU General Public License as published by the Free Software 
+ * Foundation (see <http://www.gnu.org/licenses/ for more information).
  */
 
 /*
@@ -17,9 +15,9 @@
 
 function connect() {
     $host = "localhost";
-    $database = "rmhphomebasedb";
-    $user = "rmhphomebasedb";
-    $pass = "math204";
+    $database = "boston_homebase";
+    $user = "boston_homebase";
+    $pass = "foodyWr1";
 
     $connected = mysqli_connect($host,$user,$pass);
     if (!$connected) { echo "not connected"; return mysqli_error($connected);}
