@@ -86,8 +86,8 @@ function show_master_schedule($venue) {
             }
         }
         echo ("<td class=\"masterhour\">" . $showgroup . " " . $hour . "</td></tr>");
-        $showgroup = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
       }
+      $showgroup = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     }
     echo "</table>";
    
@@ -125,7 +125,7 @@ function do_shift($master_shift, $master_shift_length) {
     /* $master_shift is a MasterScheduleEntry object
      */
     if ($master_shift_length == 0) { // no shift at all
-        $s = "<td bgcolor=\"lightgray\" rowspan='" . $master_shift_length . "'>" .
+        $s = "<td bgcolor=\"lightgray\" rowspan='1'>" .
                 "<a id=\"shiftlink\" href=\"editMasterSchedule.php?group=" .
                 $master_shift->get_week_no() . "&day=" . $master_shift->get_day() . "&shift=" .
                 $master_shift->get_hours() . "&venue=" . $master_shift->get_venue() . "\">" .

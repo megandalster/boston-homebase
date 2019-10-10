@@ -76,11 +76,9 @@ session_cache_expire(30);
                         }
                     }
                     if ($_GET['venue'] == 'mealprep')
-                        echo('<iframe src="https://www.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=u2jo8uhlh87cmklhcuhjkpkp54%40group.calendar.google.com&amp;color=%23711616&amp;ctz=America%2FNew_York" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>');
+                        echo('<iframe src="https://calendar.google.com/calendar/embed?src=volunteer%40rmhcene.org&ctz=America%2FNew_York" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>');
                     if ($_GET['venue'] == 'activities')
-                        echo('<iframe src="https://www.google.com/calendar/embed?src=3dpjvib1nb87rvjlutsguq2ah8%40group.calendar.google.com&ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>');
-                    if ($_GET['venue'] == 'group')
-                        echo('<iframe src="https://www.google.com/calendar/embed?src=efdi3jqfr19t65jqn35mljkmi0%40group.calendar.google.com&ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>');
+                        echo('<iframe src="https://calendar.google.com/calendar/embed?src=volunteer%40rmhcene.org&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>');
                 }
                 echo " </div>";
                 include('footer.inc');
