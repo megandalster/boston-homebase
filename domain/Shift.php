@@ -19,7 +19,7 @@ include_once(dirname(__FILE__).'/../database/dbPersons.php');
 class Shift {
 
     private $mm_dd_yy;      // String: "mm-dd-yy".
-    private $hours;          // String: '8-12', '12-4', '4-8'
+    private $hours;          // String: '9-1', '10-1', '1-5', '5-8'
     private $start_time;    // Integer: e.g. 10 (meaning 10:00am)     
     private $end_time;      // Integer: e.g. 13 (meaning 1:00pm)	  
     private $venue;         // "house", "fam", or "mealprep"
@@ -41,7 +41,7 @@ class Shift {
         $i = strpos($this->hours, "-");
         if ($i>0) {
         	$this->start_time = substr($this->hours, 0, $i);  
-        	if ($this->start_time == '4') {
+        	if ($this->start_time != '10'&&$this->start_time !="9") {
         		$this->start_time += 12;
         	};
         	$this->end_time = substr($this->hours, $i + 1);

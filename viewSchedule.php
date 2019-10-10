@@ -59,7 +59,7 @@ include_once("domain/MasterScheduleEntry.php");
 function show_master_schedule($venue) {
 	$groups = array("1st", "2nd", "3rd", "4th", "5th");
 	$altgroups = array("odd", "even");
-    $shifts = array("8-12","12-4","4-8");
+    $shifts = array("10-1","1-5","5-8");
 	$venues = array("house"=>"House","fam"=>"Family Room");
     $days = array("Mon" => "Monday", "Tue" => "Tuesday", "Wed" => "Wednesday",
                     "Thu" => "Thursday", "Fri" => "Friday", "Sat" => "Saturday", "Sun" => "Sunday");
@@ -75,6 +75,8 @@ function show_master_schedule($venue) {
       foreach ($shifts as $hour) {
         echo ("<tr><td class=\"masterhour\">   " . $showgroup . " " . $hour . "</td>");
         foreach ($days as $day => $dayname) {
+            if ($hour=="10-1" && ($day=="Sat"||$day=="Sun"))
+                $hour="9-1";
         	$master_shift = retrieve_dbMasterSchedule($group .":". $day .":". $hour .":". $venue);
             if ($master_shift) {
             	echo do_shift($master_shift,1);
@@ -88,7 +90,7 @@ function show_master_schedule($venue) {
       }
     }
     echo "</table>";
-    
+   
     echo ('<br><table id="calendar" align="center" ><tr class="weekname"><td colspan="' . (sizeof($days) + 2) . '" ' .
     'bgcolor="ffdddd" align="center" >' .$venues[$venue]." Master Schedule -- use only for scheduling selected weeks of the month");
     echo ('</td></tr><tr><td bgcolor="#ffdddd">  </td>');
@@ -99,8 +101,10 @@ function show_master_schedule($venue) {
     foreach ($groups as $group){
       $showgroup = $group;
       foreach ($shifts as $hour) {
-      	echo ("<tr><td class=\"masterhour\">   " . $showgroup . " " . $hour . "</td>");
+        echo ("<tr><td class=\"masterhour\">   " . $showgroup . " " . $hour . "</td>");
         foreach ($days as $day => $dayname) {
+            if ($hour=="10-1" && ($day=="Sat"||$day=="Sun"))
+                $hour="9-1";
         	$master_shift = retrieve_dbMasterSchedule($group .":". $day .":". $hour .":". $venue);
         	if ($master_shift) {
             	echo do_shift($master_shift,1);
@@ -114,6 +118,7 @@ function show_master_schedule($venue) {
       }
     }
     echo "</table>";
+
 }
 
 function do_shift($master_shift, $master_shift_length) {

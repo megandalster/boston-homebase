@@ -491,10 +491,10 @@ function get_volunteer_hours($from,$to,$venue){ //Used for Total Hours Report
     	$the_date = $a_shift->get_date();	
     	if(ge($the_date,$from) && ge($to,$the_date)){  
        		$people = $a_shift->get_persons();       		
-       		if($a_shift->get_hours() == "night"){	
-        		$length = 8;
-       		}else{
+       		if($a_shift->get_hours() == "9-1" || $a_shift->get_hours() == "1-5"){	
         		$length = 4;
+       		}else{
+        		$length = 3;
        		}
        		$num_people = count($a_shift->get_persons());
        		$num_hours = $num_people * $length;

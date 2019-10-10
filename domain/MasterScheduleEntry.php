@@ -16,7 +16,7 @@ class MasterScheduleEntry {
 	private $venue; 		// "house" or "fam" for House or Family Room
 	private $day;           // "Mon", "Tue", ... "Sun"
 	private $week_no;       // week of month 1st-5th, or week of year 'odd' or 'even'
-	private $hours;    		// "8-12", "12-4", "4-8", or "night"
+	private $hours;    		// "10-1", "1-5", "5-8"
 	private $slots;         // the number of slots to be filled for this shift
 	private $persons;       // array of ids, eg ["alex2071234567", "jane1112345567"]
 	private $notes;         // notes to be displayed for this entry
@@ -75,7 +75,7 @@ class MasterScheduleEntry {
 		$daynames = array("Mon"=>"Monday","Tue"=>"Tuesday","Wed"=>"Wednesday","Thu"=>"Thursday",
 					"Fri"=>"Friday", "Sat"=>"Saturday", "Sun"=>"Sunday");
 		$venues = array("house"=>"House", "fam"=>"Family Room");
-		$hours = array("8-12"=>"8am to 12pm", "12-4"=>"12pm to 4pm", "4-8"=>"4pm to 8pm", "night"=>"Overnight");
+		$hours = array("10-1"=>"10am to 1pm", "1-5"=>"1pm to 5pm", "5-8"=>"5pm to 8pm");
 		return $venues[$this->venue]." Master Schedule, ".$this->week_no." ".$daynames[$this->day].
 					"s, ".$hours[$this->hours];
 		

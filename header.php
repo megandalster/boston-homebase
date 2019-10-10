@@ -90,8 +90,8 @@
         if ($_SESSION['access_level'] >= 1) {
             echo(' | <strong>calendars:</strong> <a href="' . $path . 'calendar.php?venue=house">house, </a>');
             echo('<a href="' . $path . 'calendar.php?venue=mealprep">meal prep, </a>');
-            echo('<a href="' . $path . 'calendar.php?venue=activities">activity, </a>');
-            echo('<a href="' . $path . 'calendar.php?venue=group">group </a>');
+            echo('<a href="' . $path . 'calendar.php?venue=activities">activity</a>');
+        //    echo('<a href="' . $path . 'calendar.php?venue=group">, group </a>');
         }
         if ($_SESSION['access_level'] == 1.5) {
             echo('<br>');

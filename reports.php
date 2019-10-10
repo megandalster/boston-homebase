@@ -84,15 +84,13 @@ $(function() {
 	<p id="search-fields-container">
 	<form id = "search-fields" method="post">
 		<input type="hidden" name="_form_submit" value="report" />
-		<p class = "search-description" id="today"> <b>RMH Providence Volunteer Reports</b><br> Today's date: 
+		<p class = "search-description" id="today"> <b>RMH Boston Harbor Volunteer Reports</b><br> Today's date: 
 		<?php date_default_timezone_set ("America/New_York"); echo Date("F d, Y");?></p>
 	<table>	<tr>
 		<td class = "search-description" valign="top"> &nbsp;&nbsp;&nbsp;&nbsp;Select Report Type: 
 		<p>	<select multiple name="report-types[]" id = "report-type" size="5">
 	  		<option value="volunteer-hours">Total Hours</option>
 	  		<option value="shifts-staffed-vacant">Shifts/Vacancies</option>
-	  		<option value="birthdays">* Active Volunteer Birthdays</option>
-	  		<option value="history">* Active Volunteer History</option>
 	  		<option value="volunteers">* Active Volunteer Contact Info</option>
 			</select>
 		</td>
@@ -100,17 +98,6 @@ $(function() {
 			<p id="fromto"> from : <input name = "from" type="text" size="10" id="from"><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;to : <input name = "to" type="text" size="10" id="to"></p>
 		</td>
-		<td class = "search-description" valign="top">&nbsp;&nbsp; Last Name Range: 
-			<p id="name_fromto"> from : <input name = "name_from" type="text" size="10" id="name_from"><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;to : <input name = "name_to" type="text" size="10" id="name_to"></p>
-		</td>
-		<td class = "search-description" valign="top"> &nbsp;&nbsp;&nbsp;&nbsp;Venue:
-		    <p id="venue-input"> <select name="venue" id = "report-venue">
-	  		<option value="">--any--</option>
-	  		<option value="house">House</option>
-	  		<option value="fam">Family Room</option></select></p>
-		</td>
-		
 	</tr>
 	<tr>
 	<td valign="top">

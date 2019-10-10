@@ -93,16 +93,16 @@ function show_week($days, $week, $edit, $year, $doy, $venue) {
     for ($i = 0; $i < 7; $i++)
         echo ('<td class="dom">' . get_dom($days[$i]) . '</td><td class="dow">&nbsp; ' . $daynames[$i] . '</td>');
     echo('<td bgcolor=lightblue></td></tr>');
-    $limit = 21;
-    for ($hour = 8; $hour < $limit; $hour++) {
+    $limit = 20;
+    for ($hour = 9; $hour < $limit; $hour++) {
         echo ("<tr><td class=\"hour\">" . show_hours($venue, $hour) . "</td>");
         for ($i = 0; $i < 7; $i++) {
             $shiftid = $days[$i]->get_shift_id($hour);
             if ($shiftid) {
-            	$shift_length = 4;
             	if (substr($shiftid,9,5)=="night")
             	    $t="night";
             	else $t = substr($shiftid,9,strrpos($shiftid,":")-9);
+            	if ($t=="1-5" || $t=="9-1") $shift_length=4; else $shift_length=3;
             	echo do_shift($days[$i], $t, $shift_length, $edit, $venue);
                 for ($j = $hour; $j < $hour + $shift_length; $j++)
                     $free_hour[7 * ($j - 9) + $i] = false;

@@ -68,7 +68,7 @@ foreach ($states as $st) {
     echo "<option value='" . $st . "' ";
     if ($person->get_state() == $st)
         echo("SELECTED");
-    else if ($id == "new" && $st == "RI")
+    else if ($id == "new" && $st == "MA")
         echo("SELECTED");
     echo ">" . $st . "</option>";
 }
@@ -91,7 +91,7 @@ foreach ($states as $st) {
 			})
 </script>
 <?PHP
-        echo('&nbsp;&nbsp;Gender:&nbsp;&nbsp;');
+     /*   echo('&nbsp;&nbsp;Gender:&nbsp;&nbsp;');
         echo('<select name="gender">');
         echo ('<option value=""');
         if ($person->get_gender() == '')
@@ -103,7 +103,7 @@ foreach ($states as $st) {
         if ($person->get_gender() == 'male')
             echo (' SELECTED'); echo('>male</option>');
         echo('</select>');
-
+     */
         echo '<p>Birthday: '. '<input name="birthday" type="text" id="birthday" value="'.$person->get_birthday().'">';
         echo '&nbsp;&nbsp;&nbsp;&nbsp;Start Date: '. '<input name="start_date" type="text" id="start_date" value="'.$person->get_start_date().'">';
         echo '<p>End Date: '. '<input name="end_date" type="text" id="end_date" value="'.$person->get_end_date().'">';
@@ -162,7 +162,7 @@ else {
 }
 echo('</select>');
 // $st = implode(',', $person->get_type());
-$types = array('volunteer' => 'Volunteer', 'sub' => 'Sub', 'mealprep' => 'Meal Prep', 'activities' => 'Activities', 'other' => 'Other', 'manager' => 'Manager');
+$types = array('volunteer' => 'House Volunteer', 'sub' => 'Relief Mgr', 'mealprep' => 'Meal Prep', 'activities' => 'Activities', 'other' => 'Other', 'manager' => 'Manager');
 echo('<p>Position type(s):');
 // $ts = $types;
 echo('<span style="font-size:x-small;color:FF0000">*</span>');
@@ -180,12 +180,12 @@ foreach ($types as $key => $value) {
         <span class="bigTable">
             <table>
                 <?PHP
-                $shifts = array('9-1' => 'Morning (9-1)', '1-5' => 'Afternoon (1-5)', '5-9' => 'Evening (5-9)',
+                $shifts = array('10-1' => 'Morning (10-1)', '1-5' => 'Afternoon (1-5)', '5-9' => 'Evening (5-8)',
                     'night' => "Overnight");
                 $venues = array('house'=>"House",""=>"");
                 $days = array('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun');
-                $shifts = array('8-12','12-4','4-8');
-                $weeks = array('Week of Year', 'odd', 'even', 'Week of Month', '1st', '2nd', '3rd', '4th', '5th');
+                $shifts = array('10-1','1-5','5-8');
+                $weeks = array('Week of Year', 'odd', 'even'/*, 'Week of Month', '1st', '2nd', '3rd', '4th', '5th'*/);
                 $person_availability = implode(',', $person->get_availability());
     		
    		 		echo "<table><tr><td valign='top'>";
@@ -217,6 +217,9 @@ foreach ($types as $key => $value) {
    		 		    	else foreach ($days as $day) {
    		 		    	  	echo "<td><select multiple name='availdays[]'>";
    		 		    	  	foreach ($shifts as $shift) {
+   		 		    	  	    if ($shift=="10-1")
+   		 		    	  	        if ($day=="Sat"||$day=="Sun")
+   		 		    	  	            $shift="9-1";
 	  		                    echo ('<option value=' . $week_no . ":". $day.":".$shift);
 							    if (in_array($week_no.":".$day.":".$shift, $person->get_availdays())) 
 							        echo(' SELECTED'); 
@@ -226,7 +229,7 @@ foreach ($types as $key => $value) {
    		 		    	echo "</tr>";
    		 		    }
    		 		  echo "</tr></table></td>";
-   		 		
+   		 	
    		 		echo "</tr></table>";
     			?>
             </table>
