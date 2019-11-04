@@ -76,9 +76,9 @@ session_cache_expire(30);
                         }
                     }
                     if ($_GET['venue'] == 'mealprep')
-                        echo('<iframe src="https://calendar.google.com/calendar/embed?src=volunteer%40rmhcene.org&ctz=America%2FNew_York" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>');
+                        echo('<iframe src="https://calendar.google.com/calendar/embed?src=rmhcene.org_7vfjl191f258bm4dribbc4osrs%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>');
                     if ($_GET['venue'] == 'activities')
-                        echo('<iframe src="https://calendar.google.com/calendar/embed?src=volunteer%40rmhcene.org&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>');
+                        echo('<iframe src="https://calendar.google.com/calendar/embed?src=rmhcene.org_8r0f6eht5mufjfb759av8nun2k%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>');
                 }
                 echo " </div>";
                 include('footer.inc');
