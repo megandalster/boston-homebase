@@ -185,7 +185,7 @@ foreach ($types as $key => $value) {
                 $venues = array('house'=>"House",""=>"");
                 $days = array('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun');
                 $shifts = array('10-1','1-5','5-8');
-                $weeks = array('Week of Year', 'odd', 'even'/*, 'Week of Month', '1st', '2nd', '3rd', '4th', '5th'*/);
+                $weeks = array('Week of Year', 'odd', 'even', 'Week of Month', '1st', '2nd', '3rd', '4th', '5th');
                 $person_availability = implode(',', $person->get_availability());
     		
    		 		echo "<table><tr><td valign='top'>";
