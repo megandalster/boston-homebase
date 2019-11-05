@@ -32,8 +32,8 @@
         echo('<li>If you are applying for a volunteer position, enter the Username \'guest\' and a blank Password. ');
         echo('<li>If you are a volunteer logging in for the first time, your Username is your first name followed by your ten digit phone number. ' .
         'After you have logged in, you can change your password.  ');
-        echo('(If you are having difficulty logging in or if you have forgotten your Password, please contact the <a href="mailto:jpowers@rmhprovidence.org"><i>Volunteer Coordinator</i></a>.) ');
-        echo ('<li><i>If you need to cancel your volunteer shift, you may do so here (after logging in), or else you may call the House at 401-274-4447.</i>');
+        echo('(If you are having difficulty logging in or if you have forgotten your Password, please contact the <a href="mailto:volunteer@rmhcene.org"><i>Volunteer Coordinator</i></a>.) ');
+        echo ('<li><i>If you need to cancel your volunteer shift, you may do so here (after logging in), or else you may call the House at 617-398-6458.</i>');
         echo '</ul>';
         echo('<p><table><form method="post"><input type="hidden" name="_submit_check" value="true"><tr><td>Username:</td><td><input type="text" name="user" tabindex="1"></td></tr><tr><td>Password:</td><td><input type="password" name="pass" autocomplete="off" tabindex="2"></td></tr><tr><td colspan="2" align="center"><input type="submit" name="Login" value="Login"></td></tr></table>');
     } else {
@@ -72,7 +72,7 @@
                     echo('<p>If you are a volunteer, your Username is your first name followed by your phone number with no spaces. ' .
                     'For instance, if your first name were John and your phone number were (401)-123-4567, ' .
                     'then your Username would be <strong>John4011234567</strong>.  ');
-                    echo('If you do not remember your password, please contact the <a href="mailto:jpowers@rmhprovidence.org">Volunteer Coordinator</a>.');
+                    echo('If you do not remember your password, please contact the <a href="mailto:volunteer@rmhcene.org">Volunteer Coordinator</a>.');
                     echo('<p><table><form method="post"><input type="hidden" name="_submit_check" value="true"><tr><td>Username:</td><td><input type="text" name="user" tabindex="1"></td></tr><tr><td>Password:</td><td><input type="password" name="pass" tabindex="2"></td></tr><tr><td colspan="2" align="center"><input type="submit" name="Login" value="Login"></td></tr></table>');
                 }
             } else {
@@ -81,7 +81,7 @@
                 echo('<p>If you are a volunteer, your Username is your first name followed by your phone number with no spaces. ' .
                 'For instance, if your first name were John and your phone number were (401)-123-4567, ' .
                 'then your Username would be <strong>John4011234567</strong>.  ');
-                echo('If you do not remember your password, please contact the <a href="mailto:jpowers@rmhprovidence.org">Volunteer Coordinator</a>.');
+                echo('If you do not remember your password, please contact the <a href="mailto:volunteer@rmhcene.org">Volunteer Coordinator</a>.');
                 echo('<p><table><form method="post"><input type="hidden" name="_submit_check" value="true"><tr><td>Username:</td><td><input type="text" name="user" tabindex="1"></td></tr><tr><td>Password:</td><td><input type="password" name="pass" tabindex="2"></td></tr><tr><td colspan="2" align="center"><input type="submit" name="Login" value="Login"></td></tr></table>');
             }
         }
