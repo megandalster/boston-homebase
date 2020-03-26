@@ -39,7 +39,7 @@
 				
  				<p><b>System Access and Reuse</b><br /><br />
 				Because <i>Homebase</i> must protect the privacy of individual RMH volunteers and staff, outside access to the system is
-				restricted.  If you are an RMH staff member or volunteer and have forgotten your Username or Password, please contact the <a href="mailto:randerson@rmhcne.org">Volunteer Coordinator</a>.
+				restricted.  If you are an RMH staff member or volunteer and have forgotten your Username or Password, please contact the <a href="mailto:volunteer@rmhcene.org">Volunteer Coordinator</a>.
                 </p>
 				<p> <i>Homebase</i> is free and open source software (see <a href="https://github.com/megandalster/homebasedemo2017" target="_blank">https://github.com/megandalster/homebasedemo2017</a>).  
 				From this site, its source code can be freely downloaded and adapted

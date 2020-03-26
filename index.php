@@ -100,7 +100,7 @@ session_cache_expire(30);
                                 foreach ($upcoming_shifts as $tableId) {
                                     echo('<li type="circle">' . get_shift_name_from_id($tableId)) . '</li>';
                                 }
-                                echo('</ul><p>If you need to cancel an upcoming shift, please email <a href="mailto:jpowers@rmhprovidence.org,sczekalski@rmhprovidence.org,mlepage@rmhprovidence.org">Joanna, Sue, and Michelle</a>.</p></div>');
+                                echo('</ul><p>If you need to cancel an upcoming shift, please email <a href="mailto:volunteer@rmhcene.org">the Volunteer Coordinator</a>.</p></div>');
                             }
                             
                             // link to personal log sheet
