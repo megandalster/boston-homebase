@@ -33,7 +33,7 @@ session_cache_expire(30);
                 $group = $_GET['group'];         // 1st
                 $venue = $_GET['venue'];         // house
                 $day = $_GET['day'];             // Mon
-                $shiftname = $_GET['shift'];     // 10-1
+                $shiftname = $_GET['shift'];     // 8-12
                 $id = $group.":".$day.":".$shiftname.":".$venue;
     
                 $msentry = retrieve_dbMasterSchedule($id);

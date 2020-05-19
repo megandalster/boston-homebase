@@ -52,7 +52,7 @@ function report_volunteer_hours_by_day($from, $to, $venue) {
 	echo " for the ".pretty_venue($venue).".";
 
 	$report = get_volunteer_hours($from, $to, $venue);
-	$row_labels = array("9-1","10-1","1-5","5-8","Total");
+	$row_labels = array("8-12","12-4","4-8","Total");
 	$col_labels = array("Mon","Tue","Wed","Thu","Fri","Sat","Sun","Total");
 	display_totals_table($col_labels, $row_labels, $report, $export);	
 }
@@ -69,7 +69,7 @@ function report_shifts_staffed_vacant_by_day($from, $to, $venue) {
 	echo " for the ".pretty_venue($venue).".";
 
 	$report = get_shifts_staffed($from, $to, $venue);
-	$row_labels = array("9-1","10-1","1-5","5-8","Total");
+	$row_labels = array("8-12","12-4","4-8","Total");
 	$col_labels = array("Mon","Tue","Wed","Thu","Fri","Sat","Sun","Total");
 	display_vacancies_table($col_labels, $row_labels, $report, $export);
 }
